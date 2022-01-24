@@ -1,3 +1,19 @@
+<?php
+
+require_once 'connexion.php';
+
+$db = db_connect();
+
+$req = $db->prepare( "SELECT * FROM utilisateur" );
+$req->execute( array() );
+
+$data = $req->fetchAll();
+
+var_dump( $data );
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
