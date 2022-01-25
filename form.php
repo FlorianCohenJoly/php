@@ -51,13 +51,18 @@ if(isset($_POST['Bouton'])){
     ));
 
 }
+
+
+
+
+//slide 46 ligne 12
 ?>
 
 
 <form method="post" action="form.php">
 
 <p>Veuillez saisir votre nom de compte : </p>
-<input type="text" id="name" name="nomCb" placeholder="Nom"> </input>
+<input type="text"  name="nomCb" placeholder="Nom"> </input>
 
 <br>
 
@@ -68,17 +73,17 @@ if(isset($_POST['Bouton'])){
 
 
 <p> Qu'elle est votre type de compte ?  : </p>
-<select id="typeCompte" name="typeCb">
+<select  name="typeCb">
         <option value="">--Type de compte--</option>
         <option value="courant">Compte courant</option>
-        <option value="epargne">Compte epargne</option>
+        <option value="epargne">Compte épargne</option>
         <option value="compte joint">Compte joint</option>
     </select><br>
 
 <br>
 
 <p>Qu'elle est la devise ? </p>
-<select name="deviseCb">
+<select name="deviseCb" >
             <option value="EUR">Euros</option>
             <option value="USD">Dollars</option>
         </select>
