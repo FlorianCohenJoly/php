@@ -20,7 +20,7 @@ $db = db_connect();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>Document</title>
+    <title>Formulaire</title>
 </head>
 <body> 
 
@@ -94,6 +94,10 @@ if(isset($_POST['Bouton'])){
 
 
 <p><input type="submit" name="Bouton" value="Valider"/></p>
+
+
+
+
 
 </p>
 

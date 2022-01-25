@@ -10,7 +10,9 @@
 <h1> Menu </h1>
 
 
-<h2> <a href="form.php" >Créer votre compte </a> </h2>
+<p> <h2> <a href="form.php" >Créer votre compte </a> </h2> </p>
+
+<p> <h2> <a href="compte.php"> Gérer mon compte </a> </h2> </p>
 
 
 
