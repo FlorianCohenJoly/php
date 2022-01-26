@@ -26,7 +26,7 @@ bdd();
 <form method="post" action="../form/form.php">
 
 <p>Veuillez saisir votre nom de compte : </p>
-<input type="text"  name="nomCb" placeholder="Nom"> </input>
+<input type="text"  name="nomCb" placeholder="Nom" required> </input>
 
 <br>
 
@@ -36,7 +36,7 @@ bdd();
 
 
 <p> Qu'elle est votre type de compte ?  : </p>
-<select  name="typeCb">
+<select  name="typeCb" required>
         <option value="">--Type de compte--</option>
         <option value="courant">Compte courant</option>
         <option value="epargne">Compte épargne</option>
@@ -46,17 +46,17 @@ bdd();
 <br>
 
 <p>Qu'elle est la devise ? </p>
-<select name="deviseCb" >
+<select name="deviseCb" required>
             <option value="EUR">Euros</option>
             <option value="USD">Dollars</option>
         </select>
 
 <br>
 
-<input type="number" step="0.01" name="provisionCb"/>
+<input type="number" step="0.01" name="provisionCb" required/>
 
 
-<p><input type="submit" name="Bouton" value="Valider"/></p>
+<p><input type="submit" name="Bouton" value="Valider" req/></p>
 
 
 
