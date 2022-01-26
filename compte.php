@@ -11,6 +11,18 @@
 <?php 
     require_once 'connexion.php';
 
+    if(isset($_POST['BoutonSupp'])){ 
+        $db = db_connect();
+    
+        $req = $db->prepare("DELETE FROM compteBancaire WHERE idCb = :idCb");
+        //$req-›execute(array ($_POST ['typeCb'] ));
+
+        $req->execute( array(
+            ':idCb' => $_POST['BoutonSupp']
+        ) );
+    
+    }
+
 
     
     $db = db_connect();
@@ -19,18 +31,6 @@
     $req->execute( array() );
 
     $datas = $req->fetchAll();
-
-    if(isset($_POST['BoutonSupp'])){ 
-
-        $db = db_connect();
-    
-    
-    
-        $req = $db->prepare("DELETE FROM compteBancaire WHERE idCb");
-        $req-›execute (array ($_POST ['idCb']));
-    
-    }
-    
 
     
 
@@ -41,17 +41,14 @@
         echo 'Provision du compte: ' . $data['provisionCb'].'<br>';
         echo 'Devise du compte : ' . $data['deviseCb'].'<br>';
         echo '<br>';
-        echo '<input type="submit" name="BoutonSupp" value="Supprimer se compte"/>';
+        echo '<form method="POST" action="">';
+        echo '<button type="submit" name="BoutonSupp" value="' . $data['idCb'] . '">Supprimer ce compte</button>';
+        //echo '<input type="submit" name="BoutonSupp" value="Supprimer ce compte"/>';
+        echo '</form>';
         echo '<br>';
     };
+    
 ?>    
-
-
-
-
-
-
-
 
 
 
