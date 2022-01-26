@@ -19,7 +19,7 @@ function bdd(){
             //$AjouterCb="INSERT INTO compteBancaire (nomCb, typeCb,deviseCb) VALUES ('$nomCb', '$typeCb', '$deviseCb')";
             $req = $db->prepare( 'INSERT INTO compteBancaire (idUtilisateur, nomCb, provisionCb, typeCb,deviseCb) VALUES ( :idUtilisateur, :nomCb, :provisionCb, :typeCb, :deviseCb)' );
             $req->execute( array(
-                'idUtilisateur' => $idUtilisateur,
+                'idUtilisateur' => 1,
                 'nomCb' => $nomCb,
                 'provisionCb' => $provisionCb,
                 'typeCb' => $typeCb,
@@ -37,14 +37,18 @@ function inscription(){
     if(isset($_POST['ValiderInscription'])){
         $mailInscription = $_POST['mailInscription'];
         $mdpInscription = $_POST['mdpInscription'];
-
-        $req = $db->prepare('INSERT INTO utilisateur (idUtilisateur,mailUtilisateur,mdpUtilisateur) VALUES (:idUtilisateur,:mailUtilisateur,:mdpUtilisateur)');
+        $validMDP = $_POST['confirmMDP'];
+        
+        if ($validMDP == $mdpInscription){
+        $req = $db->prepare('INSERT INTO utilisateur (mailUtilisateur,mdpUtilisateur) VALUES (:mailUtilisateur,:mdpUtilisateur)');
         $req->execute( array(
-            'idUtilisateur' => '',
             'mailUtilisateur' => $mailInscription,
             'mdpUtilisateur' => $mdpInscription
         ));
-    echo "omg";
+        echo "<script>alert('Welcome ! You have created an account')</script>";
+        } elseif($validMDP != $mdpInscription){
+            echo "<script>alert('You have to valid your password!')";
+        }
     }
 }
 
