@@ -12,6 +12,7 @@
 
 <h2><a href="form/form.php">Ajouter un compte bancaire </a></h2>
 
+<p> <h2> <a href="compte.php"> Gérer mes comptes </a> </h2> </p>
 
 
 </form>
