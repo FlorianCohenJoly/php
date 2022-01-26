@@ -22,11 +22,6 @@ suppCb();
     
 $datas = getAcount();
    
-
-    
-
-    
-
     foreach($datas as $data){
         echo 'Numero de compte bancaire : ' . $data['idCb'].'<br>';
         echo 'Nom du compte : ' . $data['nomCb'].'<br>';

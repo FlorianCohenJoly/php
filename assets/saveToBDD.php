@@ -2,12 +2,29 @@
 session_start();
 require_once 'connexion.php';
 
+function hasString( $string ) {
+    $hasString = false;
+    for( $i = 0; $i < strlen( $string ); $i++ ) {
+        if( ctype_alpha( $string[$i] ) ) $hasString = true;
+    }
+
+    return $hasString;
+}
+
+function hasSpecialChar( $string ) {
+    $hasSpecialChar = false;
+    for( $i = 0; $i < strlen( $string ); $i++ ) {
+        if(ctype_punct($string[$i])) $hasSpecialChar = true;
+    }
+    return $hasSpecialChar;
+}
+
 function bdd(){
     $db = db_connect();
     $idUtilisateur = 1;
     $limit = $db->query('SELECT* FROM compteBancaire');
     $rowLimit = count($limit->fetchAll());
-    echo $rowLimit;
+    
     
         if(isset($_POST['Bouton'])){ 
             $nomCb = $_POST['nomCb'];
@@ -15,7 +32,22 @@ function bdd(){
             $deviseCb = $_POST['deviseCb'];
             $provisionCb = $_POST['provisionCb'];
 
-            if ($idUtilisateur==1 && $rowLimit < 10) {
+            if(errorEmpty($nomCb,$provisionCb)){
+                return;
+            }
+
+            if (hasSpecialChar($nomCb)){
+                echo "<script>alert('Invalid value')</script>";
+                return;
+                }
+
+            elseif(hasString($provisionCb) || hasSpecialChar($provisionCb)){
+                echo "<script>alert('Invalid value for provision')</script>";
+                return;
+            }
+
+            elseif ($idUtilisateur==1 && $rowLimit < 10) {
+            
             //$AjouterCb="INSERT INTO compteBancaire (nomCb, typeCb,deviseCb) VALUES ('$nomCb', '$typeCb', '$deviseCb')";
             $req = $db->prepare( 'INSERT INTO compteBancaire (idUtilisateur, nomCb, provisionCb, typeCb,deviseCb) VALUES ( :idUtilisateur, :nomCb, :provisionCb, :typeCb, :deviseCb)' );
             $req->execute( array(
@@ -25,11 +57,26 @@ function bdd(){
                 'typeCb' => $typeCb,
                 'deviseCb' => $deviseCb
             ));
-            }else{
+
+            }elseif ($rowLimit >10){
                 echo "<script>alert('You have exceed number of accounts')</script>";
-                }
-            echo $rowLimit;
-        }
+            };
+        };
+};
+
+function errorEmpty($nomCb,$provisionCb){
+    $error = false;
+    if(empty($nomCb)){
+        echo "<script>alert('Name is required')</script>";
+        $error = true;
+        return $error;
+    }
+    elseif(empty($provisionCb)){
+        echo "<script>alert('Provision is required')</script>";
+        $error = true;
+        return $error;
+    }
+    return $error;
 }
 
 function inscription(){
@@ -51,4 +98,7 @@ function inscription(){
         }
     }
 }
-
+$str = "This is some <b>bold</b> text.";
+echo htmlspecialchars($str);
+echo "<h3><a href='../index.php'>Back to menu</a></h3>";
+?>

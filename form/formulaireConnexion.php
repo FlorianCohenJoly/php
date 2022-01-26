@@ -8,12 +8,16 @@
 </head>
 <body> 
 
+<?php 
+$check1 = 0;
 
+?>
 
-<form method="post" action="../assets/saveToBDD.php">
+<form method="post" action="formulaireConnexion.php">
 
 <p>Veuillez saisir votre email : </p>
 <input type="text"  name="email" placeholder="Votre email"> </input>
+
 
 <br>
 

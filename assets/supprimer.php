@@ -1,8 +1,7 @@
 <?php
-
+require_once 'connexion.php';
 
 function suppCb() {
-
 
 if(isset($_POST['BoutonSupp'])){ 
     $db = db_connect();
@@ -17,3 +16,4 @@ if(isset($_POST['BoutonSupp'])){
 }
 
 }
+echo "<h3><a href='./index.php'>Back to menu</a></h3>";
