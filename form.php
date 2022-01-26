@@ -27,7 +27,7 @@ bdd();
 <form method="post" action="form.php">
 
 <p>Veuillez saisir votre nom de compte : </p>
-<input type="text"  name="nomCb" placeholder="Nom"> </input>
+<input type="text"  name="nomCb" placeholder="Nom" required> </input>
 
 <br>
 
@@ -55,7 +55,7 @@ bdd();
 
 <br>
 
-<input type="number" step="0.01" name="provisionCb"/>
+<input type="number" step="0.01" name="provisionCb" required/>
 
 
 <p><input type="submit" name="Bouton" value="Valider"/></p>

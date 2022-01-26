@@ -29,37 +29,42 @@ function accesCb(){
         $datas = $req->fetchAll();
 
         foreach($datas as $data){
+
+            echo '<form method="post" action="">';
             echo 'Numero de compte bancaire : ' . $data['idCb'].'<br>';
             echo '<br>';
-            echo '<button type="submit" name="" value="' . $data['idCb'] . '">Modifier</button>'.'<br>';
+            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
+
             echo '<br>';
 
             echo 'Nom du compte : ' . $data['nomCb'].'<br>';
             echo '<br>';
-            echo '<button type="submit" name="" value="' . $data['idCb'] . '">Modifier</button>'.'<br>';
+            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
             echo '<br>';
 
 
             echo 'Type du compte bancaire : ' . $data['typeCb'].'<br>';
             echo '<br>';
-            echo '<button type="submit" name="" value="' . $data['idCb'] . '">Modifier</button>'.'<br>';
+            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
             echo '<br>';
 
             echo 'Provision du compte: ' . $data['provisionCb'].'<br>';
             echo '<br>';
-            echo '<button type="submit" name="" value="' . $data['idCb'] . '">Modifier</button>'.'<br>';
+            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
             echo '<br>';
 
             echo 'Devise du compte : ' . $data['deviseCb'].'<br>';
             echo '<br>';
-            echo '<button type="submit" name="" value="' . $data['idCb'] . '">Modifier</button>'.'<br>';
+            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
             echo '<br>';
+            echo '</form>';
 
             echo 'couc';
             echo "<br/>";
 
             echo '<p><a href="compte.php">Retour à mes comptes </a></p>';
         };
+
     }
  }
 
