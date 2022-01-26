@@ -2,15 +2,12 @@
 session_start();
 require_once 'connexion.php';
 
-
-
 function bdd(){
     $db = db_connect();
-    $idUtilisateur = 2;
+    $idUtilisateur = 1;
     $limit = $db->query('SELECT* FROM compteBancaire');
     $rowLimit = count($limit->fetchAll());
     echo $rowLimit;
-
     
         if(isset($_POST['Bouton'])){ 
             $nomCb = $_POST['nomCb'];
@@ -31,17 +28,23 @@ function bdd(){
             }else{
                 echo "<script>alert('You have exceed number of accounts')</script>";
                 }
+            echo $rowLimit;
         }
 }
 
-function supprimer() {
+function inscription(){
     $db = db_connect();
-    if(isset($_POST['supprimer'])){
-        $del = $db->prepare("DELETE FROM compteBancaire WHERE :nomCb");
-        $del->execute(array("nomCb"=>$_POST['nomCB']));
-        $count = $del->fetchColumn();
-        echo $count;
+    if(isset($_POST['ValiderInscription'])){
+        $mailInscription = $_POST['mailInscription'];
+        $mdpInscription = $_POST['mdpInscription'];
+
+        $req = $db->prepare('INSERT INTO utilisateur (idUtilisateur,mailUtilisateur,mdpUtilisateur) VALUES (:idUtilisateur,:mailUtilisateur,:mdpUtilisateur)');
+        $req->execute( array(
+            'idUtilisateur' => '',
+            'mailUtilisateur' => $mailInscription,
+            'mdpUtilisateur' => $mdpInscription
+        ));
+    echo "omg";
+    }
 }
-}
-?>
 

@@ -1,11 +1,10 @@
+<?php
+require_once '../assets/saveToBDD.php';
 
-<?php 
-$db = db_connect();
-require_once 'connexion.php';
-require_once 'saveToBDD.php';
+// $db = db_connect();
 
 bdd();
-supprimer();
+
 //$req = $db->prepare( "SELECT * FROM utilisateur" );
 //$req->execute( array() );
 
@@ -30,7 +29,7 @@ supprimer();
 
 
 
-<form method="post" action="form.php">
+<form method="post" action="../form/form.php">
 
 <p>Veuillez saisir votre nom de compte : </p>
 <input type="text"  name="nomCb" placeholder="Nom"> </input>
@@ -39,7 +38,6 @@ supprimer();
 
 
 <br>
-
 
 
 
