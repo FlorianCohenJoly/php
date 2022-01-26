@@ -59,6 +59,7 @@ bdd();
 <p><input type="submit" name="Bouton" value="Valider" req/></p>
 
 
+<p><a href="index.php">Retour au menu </a></p>
 
 
 
