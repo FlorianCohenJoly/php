@@ -1,16 +1,10 @@
 <?php
 require_once '../assets/saveToBDD.php';
-
-// $db = db_connect();
-
+require_once '../assets/connexion.php';
+$db = db_connect();
 bdd();
 
-//$req = $db->prepare( "SELECT * FROM utilisateur" );
-//$req->execute( array() );
 
-//$data = $req->fetchAll();
-
-//var_dump( $data );
 
  ?>
 
@@ -21,7 +15,7 @@ bdd();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>Document</title>
+    <title>Formulaire</title>
 </head>
 <body> 
 
@@ -63,6 +57,10 @@ bdd();
 
 
 <p><input type="submit" name="Bouton" value="Valider"/></p>
+
+
+
+
 
 </p>
 
