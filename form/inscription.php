@@ -20,10 +20,10 @@ inscription();
 
 
 
-<form method="post" action="../assets/saveToBDD.php">
+<form method="post" action="inscription.php">
 
 <p>Veuillez saisir votre email : </p>
-<input type="email"  name="mailInscription" pl,,aceholder="Votre email"> </input>
+<input type="email"  name="mailInscription" placeholder="Votre email"> </input>
 
 <br>
 
