@@ -9,9 +9,9 @@
 <body>
 
 <?php 
-    require_once 'connexion.php';
-    require_once 'supprimer.php';
-    require_once 'affi.php';
+    require_once 'assets/connexion.php';
+    require_once 'assets/supprimer.php';
+    require_once 'assets/affi.php';
 
 
 
