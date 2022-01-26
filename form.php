@@ -1,9 +1,11 @@
 
 <?php 
-require_once 'connexion.php';
-
 $db = db_connect();
+require_once 'connexion.php';
+require_once 'saveToBDD.php';
 
+bdd();
+supprimer();
 //$req = $db->prepare( "SELECT * FROM utilisateur" );
 //$req->execute( array() );
 
@@ -25,38 +27,7 @@ $db = db_connect();
 <body> 
 
 
-<?php
 
-require_once 'connexion.php';
-
-$db = db_connect();
-
-
-if(isset($_POST['Bouton'])){ 
-    $nomCb = $_POST['nomCb'];
-    $typeCb = $_POST['typeCb'];
-    $deviseCb = $_POST['deviseCb'];
-    $provisionCb = $_POST['provisionCb'];
-
-
-    //$AjouterCb="INSERT INTO compteBancaire (nomCb, typeCb,deviseCb) VALUES ('$nomCb', '$typeCb', '$deviseCb')";
-
-    $req = $db->prepare( 'INSERT INTO compteBancaire (idUtilisateur, nomCb, provisionCb, typeCb,deviseCb) VALUES ( :idUtilisateur, :nomCb, :provisionCb, :typeCb, :deviseCb)' );
-    $req->execute( array(
-        'idUtilisateur' => 1,
-        'nomCb' => $nomCb,
-        'provisionCb' => $provisionCb,
-        'typeCb' => $typeCb,
-        'deviseCb' => $deviseCb
-    ));
-
-}
-
-
-
-
-//slide 46 ligne 12
-?>
 
 
 <form method="post" action="form.php">
