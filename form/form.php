@@ -56,7 +56,7 @@ bdd();
 <input type="number" step="0.01" name="provisionCb" required/>
 
 
-<p><input type="submit" name="Bouton" value="Valider" req/></p>
+<p><input type="submit" name="Bouton" value="Valider" /></p>
 
 
 <p><a href="index.php">Retour au menu </a></p>
