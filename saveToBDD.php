@@ -6,7 +6,7 @@ require_once 'connexion.php';
 
 function bdd(){
     $db = db_connect();
-    $idUtilisateur = 2;
+    $idUtilisateur = 1;
     $limit = $db->query('SELECT* FROM compteBancaire');
     $rowLimit = count($limit->fetchAll());
     echo $rowLimit;

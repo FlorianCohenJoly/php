@@ -10,27 +10,20 @@
 
 <?php 
     require_once 'connexion.php';
+    require_once 'supprimer.php';
+    require_once 'affi.php';
 
-    if(isset($_POST['BoutonSupp'])){ 
-        $db = db_connect();
+
+
+$db = db_connect();
+
+suppCb();
     
-        $req = $db->prepare("DELETE FROM compteBancaire WHERE idCb = :idCb");
-        //$req-›execute(array ($_POST ['typeCb'] ));
-
-        $req->execute( array(
-            ':idCb' => $_POST['BoutonSupp']
-        ) );
     
-    }
-
+$datas = getAcount();
+   
 
     
-    $db = db_connect();
-
-    $req = $db->prepare( "SELECT idCb, nomCb, typeCb, provisionCb,deviseCb FROM compteBancaire WHERE idUtilisateur = 1" );
-    $req->execute( array() );
-
-    $datas = $req->fetchAll();
 
     
 
@@ -43,7 +36,6 @@
         echo '<br>';
         echo '<form method="POST" action="">';
         echo '<button type="submit" name="BoutonSupp" value="' . $data['idCb'] . '">Supprimer ce compte</button>';
-        //echo '<input type="submit" name="BoutonSupp" value="Supprimer ce compte"/>';
         echo '</form>';
         echo '<br>';
     };

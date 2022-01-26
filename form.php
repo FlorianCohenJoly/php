@@ -1,17 +1,11 @@
 
 <?php 
-$db = db_connect();
+
 require_once 'connexion.php';
 require_once 'saveToBDD.php';
-
+$db = db_connect();
 bdd();
-supprimer();
-//$req = $db->prepare( "SELECT * FROM utilisateur" );
-//$req->execute( array() );
 
-//$data = $req->fetchAll();
-
-//var_dump( $data );
 
  ?>
 
