@@ -2,6 +2,8 @@
         require_once 'connexion.php';
         require_once 'affi.php';
 
+        update();
+        
         getAcount();
         accesCb();
     ?>
