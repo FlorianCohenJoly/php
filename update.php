@@ -1,6 +1,6 @@
     <?php
-        require_once 'connexion.php';
-        require_once 'affi.php';
+        require_once 'assets/connexion.php';
+        require_once 'assets/affi.php';
 
         update();
         

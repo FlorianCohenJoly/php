@@ -80,7 +80,7 @@ function accesCb(){
             echo 'couc';
             echo "<br/>";
 
-            echo '<p><a href="compte.php">Retour à mes comptes </a></p>';
+            echo '<p><a href="../compte.php">Retour à mes comptes </a></p>';
         };
 
     }
