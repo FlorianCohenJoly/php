@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 function operation(){
 
     if(isset($_GET['operation'])){
@@ -12,17 +15,55 @@ function operation(){
 
         $datas = $req->fetchAll();
 
+
+        
+    
+
+        if("option value = debit"){
+          $resultat =  $data['provisionCb'] - $data['montantOpe'];
+        }
+
+
+
+
+
         foreach($datas as $data){
+
+
+            
             echo '<form method="POST" action="">';
             echo 'Numero de compte bancaire : ' . htmlspecialchars($data['idCb']).'<br>';
+            echo 'Provision du compte: ' .htmlspecialchars($data['provisionCb']).'<br>';
+            echo 'Provision du compte: ' .$resultat.'<br>';
+
+
             echo '<br>';
             echo 'Nom de votre operation :';
+            echo '<br>';
+            echo '<select name="id">
+                    
+                    <option value="debit">Alimentaire</option>
+                    <option value="debit">Vestimentaire</option>
+                    <option value="debit">Loisir</option>
+                    <option value="debit">Transport</option>
+                    <option value="debit">Logement</option>
+                    <option value="debit">Autres</option>
+                    <option value="credit">Virement</option>
+                    <option value="credit">Dépot</option>
+                    <option value="credit">Salaire</option>
+                    <option value="ccredit">Autres</option>
+
+
+                </select>'; 
+             echo '<br>';
             echo '<br>';
             echo '<br>';
             echo '<input type="text" name= "nomOpe" placeholder="Nom de votre operation"/> ';
             echo '<br>';
             echo '<br>';
             echo 'Montant de votre operation :';
+            
+
             echo '<br>';
             echo '<br>';
             echo '<input type="number" name="montantOpe" placeholder="montant de l\'operation" />';
@@ -80,6 +121,11 @@ function operationList(){
         echo '<option value=" '.$row['idCb'].' ">'.$row['nomOperation'].':'.$row['montantOperation'].' : '.$row['dateOperation'].' </option>';
     }
 }
+
+
+
+
+
 ?>
 
 
