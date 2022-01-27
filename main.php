@@ -14,7 +14,6 @@
 
 <p> <h2> <a href="compte.php"> Gérer mes comptes </a> </h2> </p>
 
-
 </form>
 
 

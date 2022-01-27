@@ -12,7 +12,7 @@
     require_once 'assets/connexion.php';
     require_once 'assets/supprimer.php';
     require_once 'assets/affi.php';
-
+    require_once 'assets/operationFunction.php';
 
 
 $db = db_connect();
@@ -42,7 +42,9 @@ accesCb();
         echo '</form>';
         echo '<form method="GET" action="update.php">';
         echo '<button type="submit" name="idCompte" value="' . $data['idCb'] . '">Modifier ce compte </button>';
-        echo '</form>'; 
+        echo '</form>';
+        echo '<form method="GET" action="operationFunction.php"';
+        echo '<button type="submit" name="operation" value="' . $data['idCb'] . '">Ajouter des operations </button>';
         echo '<br>';
         echo '<hr width="100%" color="black" />';
     };

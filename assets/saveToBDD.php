@@ -98,7 +98,5 @@ function inscription(){
         }
     }
 }
-$str = "This is some <b>bold</b> text.";
-echo htmlspecialchars($str);
-echo "<h3><a href='../index.php'>Back to menu</a></h3>";
+echo "<h3><a href='./index.php'>Back to menu</a></h3>";
 ?>
