@@ -25,7 +25,6 @@ $datas = getAcount();
 
 accesCb();
 
-    
 
     
     foreach($datas as $data){
@@ -43,8 +42,9 @@ accesCb();
         echo '<form method="GET" action="update.php">';
         echo '<button type="submit" name="idCompte" value="' . $data['idCb'] . '">Modifier ce compte </button>';
         echo '</form>';
-        echo '<form method="GET" action="operationFunction.php"';
+        echo '<form method="GET" action="operation.php">';
         echo '<button type="submit" name="operation" value="' . $data['idCb'] . '">Ajouter des operations </button>';
+        echo '</form>';
         echo '<br>';
         echo '<hr width="100%" color="black" />';
     };

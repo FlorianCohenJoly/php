@@ -98,5 +98,4 @@ function inscription(){
         }
     }
 }
-echo "<h3><a href='./index.php'>Back to menu</a></h3>";
 ?>
