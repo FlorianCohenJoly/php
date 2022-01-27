@@ -16,20 +16,6 @@ $db = db_connect();
 
 }
 
-//Requete pour les modifications de compteBancaire
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function accesCb(){
 
@@ -55,13 +41,13 @@ function accesCb(){
 
             echo 'Nom du compte : ' . $data['nomCb'].'<br>';
             echo '<br>';
-            echo '<input type="text"  name="nomCb" placeholder="Nom"> </input>';
+            echo '<input type="text"  name="nomCb" value="'.$data['nomCb'].'"/>';
             echo '<br>';
 
 
             echo 'Type du compte bancaire : ' . $data['typeCb'].'<br>';
             echo '<br>';
-            echo '<input type="text"  name="typeCb" placeholder="Nom"> </input>';
+            echo '<input type="text"  name="typeCb" value="' . $data['typeCb'].'"/>';
             echo '<br>';
 
             echo 'Provision du compte: ' . $data['provisionCb'].'<br>';
@@ -71,8 +57,13 @@ function accesCb(){
 
             echo 'Devise du compte : ' . $data['deviseCb'].'<br>';
             echo '<br>';
-            echo '<input type="text"  name="deviseCb" placeholder="Nom"> </input>';
+            echo'<select name="deviseCb" >';
+             echo '      <option value="EUR" '.$data['deviseCb'].'>EUR</option> ';
+              echo '       <option value="USD" '.$data['deviseCb'].'>USD</option> ';
+             echo '        </select>';
+          //  echo '<input type="text"  name="deviseCb" placeholder="Nom"> </input>';
             echo '<br>';
+
             echo '<p><input type="submit" name="Bouton" value="Valider"/></p>';
 
             echo '</form>';
@@ -120,3 +111,4 @@ function update(){
 
 
  ?>   
+

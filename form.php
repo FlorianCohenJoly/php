@@ -55,6 +55,7 @@ bdd();
 
 <br>
 
+<p>Qu'elle est le montant que vous voulez mettre ? : </p>
 <input type="number" step="0.01" name="provisionCb" required/>
 
 

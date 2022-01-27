@@ -19,8 +19,7 @@ function bdd(){
             $provisionCb = $_POST['provisionCb'];
 
             if ($idUtilisateur==1 && $rowLimit < 10) {
-            //$AjouterCb="INSERT INTO compteBancaire (nomCb, typeCb,deviseCb) VALUES ('$nomCb', '$typeCb', '$deviseCb')";
-            $req = $db->prepare( 'INSERT INTO compteBancaire (idUtilisateur, nomCb, provisionCb, typeCb,deviseCb) VALUES ( :idUtilisateur, :nomCb, :provisionCb, :typeCb, :deviseCb)' );
+            $req = $db->prepare( 'INSERT INTO compteBancaire (idUtilisateur, nomCb, provisionCb, typeCb, deviseCb) VALUES ( :idUtilisateur, :nomCb, :provisionCb, :typeCb, :deviseCb)' );
             $req->execute( array(
                 'idUtilisateur' => $idUtilisateur,
                 'nomCb' => $nomCb,
@@ -34,14 +33,6 @@ function bdd(){
         }
 }
 
-function supprimer() {
-    $db = db_connect();
-    if(isset($_POST['supprimer'])){
-        $del = $db->prepare("DELETE FROM compteBancaire WHERE :nomCb");
-        $del->execute(array("nomCb"=>$_POST['nomCB']));
-        $count = $del->fetchColumn();
-        echo $count;
-}
-}
+
 ?>
 
