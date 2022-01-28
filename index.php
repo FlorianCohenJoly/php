@@ -15,7 +15,7 @@
 
 <h2> <a href="form/Inscription.php" >Créer votre compte </a> </h2> -->
 
-<h2> <a href="main.php"> main</a> </h2>
+<h2> <a href="mainHtml/main.php"> main</a> </h2>
 
 
    

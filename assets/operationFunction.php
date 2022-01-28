@@ -80,7 +80,7 @@ function operation(){
             // echo '</select>';
             echo '<br>';
             echo '</form>';
-            echo '<p><a href="./compte.php">Retour à mes comptes </a></p>';
+            echo '<p><a href="../mainHtml/compte.php">Retour à mes comptes </a></p>';
         }
     }
 

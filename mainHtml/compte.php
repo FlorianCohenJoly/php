@@ -9,10 +9,10 @@
 <body>
 
 <?php 
-    require_once 'assets/connexion.php';
-    require_once 'assets/supprimer.php';
-    require_once 'assets/affi.php';
-    require_once 'assets/operationFunction.php';
+    require_once '../assets/connexion.php';
+    require_once '../assets/supprimer.php';
+    require_once '../assets/affi.php';
+    require_once '../assets/operationFunction.php';
 
 
 $db = db_connect(); //fonction pour se connecter a la BDD.
@@ -52,7 +52,7 @@ accesCb(); //fonction qui recuperes les infos des comptes bancaires.
 ?>    
 
 
-<p><a href="index.php">Retour au menu </a></p>
+<p><a href="../index.php">Retour au menu </a></p>
 
     
 </body>

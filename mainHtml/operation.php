@@ -1,8 +1,8 @@
 <?php
-require_once 'assets/operationFunction.php';
-require_once 'assets/connexion.php';
-require_once 'assets/affi.php';
-require_once 'assets/saveToBDD.php';
+require_once '../assets/operationFunction.php';
+require_once '../assets/connexion.php';
+require_once '../assets/affi.php';
+require_once '../assets/saveToBDD.php';
 db_connect();
 
 operation();
