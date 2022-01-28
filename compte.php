@@ -15,18 +15,18 @@
     require_once 'assets/operationFunction.php';
 
 
-$db = db_connect();
+$db = db_connect(); //fonction pour se connecter a la BDD.
 
-suppCb();
+suppCb(); // fonction supprimer dans la BDD.
     
     
-$datas = getAcount();
+$datas = getAcount(); // fonction recuperation des comptes.
    
 
-accesCb();
+accesCb(); //fonction qui recuperes les infos des comptes bancaires.
 
 
-    
+    //Historique des comptes bancaires d'un compte utilisateur.
     foreach($datas as $data){
         echo '<hr width="100%" color="black"  />';
         echo '<br>';
